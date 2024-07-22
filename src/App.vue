@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    
-    <link rel="stylesheet" href="@/assets/projects/projects.css" type="text/css">
+    <link
+      rel="stylesheet"
+      href="@/assets/projects/projects.css"
+      type="text/css"
+    />
 
     <Header />
     <div class="main">
       <transition name="fade" mode="out-in">
-        <router-view/>
+        <router-view />
       </transition>
     </div>
     <Footer />
@@ -14,33 +17,40 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Helpers from './helpers';
+import Vue from "vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Helpers from "./helpers";
 
 export default Vue.extend({
-  name: 'App',
+  name: "App",
   components: {
-    Header, Footer
-  }
+    Header,
+    Footer,
+  },
 });
 
 // Preload heavy images or gifs that are used in other pages
 Helpers.preloadImages([
-  "img/projects/project-1-icon.png",
-  "img/projects/project-2-icon.png",
-  "img/projects/project-3-icon.png"
+  "img/projects/2d-3d.gif",
+  "img/projects/2d-platform.gif",
+  "img/projects/3d-manip.gif",
+  "img/projects/cutscene-1.gif",
+  "img/projects/cutscene-2.gif",
+  "img/projects/gameplay.gif",
+  "img/projects/ghost.gif",
+  "img/projects/riftable-toss.gif",
+  "img/projects/tether-laser.gif",
+  "img/projects/tether.gif",
 ]);
-
 </script>
 
 <style lang="less">
+@import "./css/projects.less";
+@import "./css/variables.less";
 
-@import './css/projects.less';
-@import './css/variables.less';
-
-html, body {
+html,
+body {
   margin: 0px;
   background-color: @bodyBgColor;
 }
@@ -49,7 +59,7 @@ html, body {
   background-color: @contentBgColor;
   color: @textColor;
 
-  font-family: 'Karla', Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -58,7 +68,11 @@ html, body {
   text-align: justify;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-align: left;
 }
 
@@ -67,7 +81,8 @@ a {
   text-decoration: none;
   opacity: 0.5;
 }
-a:hover, .router-link-exact-active {
+a:hover,
+.router-link-exact-active {
   opacity: 1;
 }
 
@@ -81,11 +96,10 @@ h1 {
 }
 
 .main {
-    padding: 12px;
-  }
+  padding: 12px;
+}
 
-@media only screen and (min-width: 620px){
-
+@media only screen and (min-width: 620px) {
   #app {
     text-align: left;
     line-height: 1.8em;
@@ -101,7 +115,9 @@ h1 {
     padding: 0px 40px 40px 180px;
   }
 
-  .main, .header, .footer {
+  .main,
+  .header,
+  .footer {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -116,7 +132,6 @@ h1 {
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0
+  opacity: 0;
 }
-
 </style>

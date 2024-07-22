@@ -34,7 +34,7 @@ export default Vue.extend({
 
 .skill-name {
   float: left;
-  width: 200px;
+  width: 250px;
 }
 
 .skill-rate {
